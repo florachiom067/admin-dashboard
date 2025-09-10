@@ -1,0 +1,187 @@
+@import url("styles.css");
+
+#records-heading {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1.6rem;
+  gap: 1.2rem;
+
+  & > h2 {
+    line-height: 4rem;
+    font-size: 3.2rem;
+    font-weight: bold;
+  }
+
+  & > p {
+    color: var(--muted-foreground);
+    line-height: 2.1rem;
+    font-size: 1.4rem;
+  }
+}
+
+#search-records {
+  padding: 1.6rem 1.2rem;
+}
+
+#search {
+  border-radius: 0.8rem;
+  background: var(--muted);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.8rem;
+
+  & > img {
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  & > input {
+    flex: 1;
+    color: var(--muted-foreground);
+    outline: none;
+    padding: 0 0.8rem;
+    line-height: 2.4rem;
+  }
+}
+
+#table-wrapper {
+  display: none;
+  padding: 0 0.8rem;
+}
+
+#table {
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  background-color: var(--input);
+}
+tr {
+  line-height: 2.1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+th {
+  padding: 1.2rem 1.6rem;
+}
+
+td {
+  padding: 2.55rem 1.6rem;
+}
+
+thead tr,
+tbody tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--foreground);
+}
+
+tbody td:not(:first-of-type),
+td a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--muted-foreground);
+  font-weight: bold;
+}
+
+/* records for mobile */
+#records-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.record-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+}
+
+.record-row-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.3rem;
+
+  & > h3 {
+    line-height: 2.4rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  & > p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: var(--muted-foreground);
+  }
+}
+
+.record-row:not(:last-of-type) {
+  border-bottom: 1px solid var(--foreground);
+}
+
+.action-icons-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.3rem;
+
+  & > img {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
+#add-student {
+  position: fixed;
+  z-index: 999;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  #records {
+    padding: 2rem 16rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #records {
+    padding: 2rem 8rem;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  #records {
+    padding: 4rem;
+  }
+
+  /* display desktop table */
+  #records-heading {
+    display: flex;
+  }
+
+  #table-wrapper {
+    display: block;
+  }
+
+  #add-student,
+  #records-mobile {
+    display: none;
+  }
+}
